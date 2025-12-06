@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bento Grid Solution</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    body {
+      background: hsl(254, 88%, 90%);
+      padding: 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+      max-width: 1100px;
+    }
+
+    /* Desktop layout */
+    @media (min-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+          "big big schedule followers"
+          "big big write ai";
+      }
+      .big   { grid-area: big; }
+      .schedule { grid-area: schedule; }
+      .followers { grid-area: followers; }
+      .write { grid-area: write; }
+      .ai { grid-area: ai; }
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .purple {
+      background: hsl(256, 67%, 59%);
+      color: white;
+    }
+
+    .yellow {
+      background: hsl(39, 100%, 71%);
+    }
+
+    h1, h2 {
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid">
+    <div class="card purple big">
+      <h1>Social Media 10x Faster with AI</h1>
+      <p>Over 4,000 5-star reviews</p>
+    </div>
+
+    <div class="card schedule">
+      <h2>Schedule to social media</h2>
+      <p>Optimize post timings to publish content at the perfect time.</p>
+    </div>
+
+    <div class="card followers yellow">
+      <h2>Grow followers</h2>
+      <p>>56% faster audience growth</p>
+    </div>
+
+    <div class="card write">
+      <h2>Create content quicker</h2>
+      <p>Write your posts using AI assistance.</p>
+    </div>
+
+    <div class="card ai">
+      <h2>Manage multiple platforms</h2>
+      <p>Keep consistent across all accounts easily.</p>
+    </div>
+  </div>
+
+</body>
+</html>
