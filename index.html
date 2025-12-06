@@ -1,102 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bento Grid Solution</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "DM Sans", sans-serif;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-    body {
-      background: hsl(254, 88%, 90%);
-      padding: 1.5rem;
-      display: flex;
-      justify-content: center;
-    }
-
-    .grid {
-      display: grid;
-      gap: 1.5rem;
-      max-width: 1100px;
-    }
-
-    /* Desktop layout */
-    @media (min-width: 900px) {
-      .grid {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: auto;
-        grid-template-areas:
-          "big big schedule followers"
-          "big big write ai";
-      }
-      .big   { grid-area: big; }
-      .schedule { grid-area: schedule; }
-      .followers { grid-area: followers; }
-      .write { grid-area: write; }
-      .ai { grid-area: ai; }
-    }
-
-    .card {
-      background: white;
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .purple {
-      background: hsl(256, 67%, 59%);
-      color: white;
-    }
-
-    .yellow {
-      background: hsl(39, 100%, 71%);
-    }
-
-    h1, h2 {
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.4;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="grid">
-    <div class="card purple big">
-      <h1>Social Media 10x Faster with AI</h1>
-      <p>Over 4,000 5-star reviews</p>
+    <link  rel="icon" type="image/png"  sizes="32x32"  href="./assets/images/favicon-32x32.png"/>
+    <title>Frontend Mentor | Bento grid</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-gray-100">
+    <div class="max-w-5xl min-h-screen px-6 py-10 mx-auto lg:px-8">
+      <div
+        class="flex auto-rows-auto flex-col justify-center items-center gap-6 lg:grid lg:grid-cols-4"
+      >
+        <div
+          class="row-start-1 row-end-5 col-start-1 col-end-2 flex h-full w-full flex-col items-center justify-center gap-6 rounded-lg border-none bg-[#f9eee1ff] p-6"
+        >
+          <h1 class="text-4xl font-semibold leading-9 tracking-tight">
+            Create and schedule content
+            <span class="italic text-[#7650dcff]">quicker.</span>
+          </h1>
+          <img
+            src="/assets/images/illustration-create-post.webp"
+            alt="create-post"
+          />
+        </div>
+        <div
+          class="row-start-1 row-end-4 col-start-2 col-end-4 flex h-full w-full flex-col items-center justify-center gap-4 rounded-lg border-none bg-[#7650dcff] p-6"
+        >
+          <h1 class="text-5xl text-center font-semibold text-white">
+            Social Media <span class="text-[#ffcb6bff]">10x</span>
+            <span class="italic">Faster</span> with AI
+          </h1>
+          <img
+            class="w-[160px]"
+            src="/assets/images/illustration-five-stars.webp"
+            alt="five-stars"
+          />
+          <p class="text-white">Over 4,000 5-star reviews</p>
+        </div>
+        <div
+          class="lg:relative py-6 overflow-hidden row-start-1 row-end-6 col-start-4 col-end-5 flex h-full w-full flex-col justify-between text-left gap-6 rounded-lg border-none bg-[#dacffcff] px-8"
+        >
+          <h1 class="text-2xl tracking-tighter leading-6 font-semibold">
+            Schedule to social media.
+          </h1>
+          <img
+            class="lg:absolute lg:top-22 lg:left-8 lg:w-[260px] max-w-none"
+            src="/assets/images/illustration-schedule-posts.webp"
+            alt="schedule-posts"
+          />
+          <p class="text-wrap font-medium text-[16px] tracking-tight">
+            Optimize post timings to publish content at the perfect time for
+            your audience.
+          </p>
+        </div>
+        <div
+          class="row-start-5 row-end-9 col-start-1 col-end-2 flex h-full w-full flex-col items-center justify-center gap-6 rounded-lg border-none bg-[#ffcb6bff] p-6"
+        >
+          <h1 class="text-4xl tracking-tight font-medium text-wrap">
+            Write your content using AI.
+          </h1>
+          <img
+            src="/assets/images/illustration-ai-content.webp"
+            alt="ai-content"
+          />
+        </div>
+        <div
+          class="row-start-4 row-end-6 col-start-2 col-end-3 flex h-full w-full flex-col rounded-lg border-none bg-white p-6 items-start justify-between gap-4 lg:relative lg:overflow-hidden lg:items-center lg:justify-center lg:gap-6 lg:p-0 lg:px-4"
+        >
+          <img
+            class="w-full object-contain lg:absolute lg:top-5 lg:left-8 lg:w-[260px] lg:max-w-none"
+            src="/assets/images/illustration-multiple-platforms.webp"
+            alt="multiple-platforms"
+          />
+          <h1
+            class="text-2xl font-medium tracking-tighter leading-6 text-left text-wrap lg:px-4 lg:mt-20 lg:mb-4"
+          >
+            Manage multiple accounts and platforms.
+          </h1>
+        </div>
+        <div
+          class="row-start-4 row-end-6 col-start-3 col-end-4 flex h-full w-full flex-col rounded-lg border-none bg-[#ffcb6bff] p-6 items-start justify-between gap-4 lg:relative lg:overflow-hidden lg:items-center lg:justify-center lg:gap-6 lg:p-0 lg:px-6"
+        >
+          <h1
+            class="text-2xl font-medium tracking-tighter leading-6 text-start lg:mb-14"
+          >
+            Maintain a consistent posting schedule.
+          </h1>
+          <img
+            class="w-[200px] self-start lg:absolute lg:top-32 lg:left-6 lg:w-[180px] lg:max-w-none lg:self-auto"
+            src="/assets/images/illustration-consistent-schedule.webp"
+            alt=""
+          />
+        </div>
+        <div
+          class="row-start-6 row-end-9 col-start-2 col-end-3 flex w-full h-full flex-col items-start justify-center gap-6 rounded-lg border-none bg-white px-4"
+        >
+          <h1 class="text-5xl font-medium text-left lg:text-6xl mt-4 lg:mt-0">
+            >56%
+          </h1>
+          <p class="text-left">faster audience growth</p>
+          <img
+            class="w-[140px] max-w-none lg:w-[160px] pb-4 lg:pb-0"
+            src="/assets/images/illustration-audience-growth.webp"
+            alt=""
+          />
+        </div>
+        <div
+          class="row-start-6 row-end-9 col-start-3 col-end-5 flex h-full w-full flex-col items-center justify-center gap-6 rounded-lg border-none bg-[#7650dcff] p-6 lg:flex-row lg:gap-4"
+        >
+          <img
+            class="w-[200px] max-w-none"
+            src="/assets/images/illustration-grow-followers.webp"
+            alt=""
+          />
+          <h1 class="text-3xl text-center font-medium text-white lg:text-left">
+            Grow followers with non-stop content.
+          </h1>
+        </div>
+      </div>
     </div>
-
-    <div class="card schedule">
-      <h2>Schedule to social media</h2>
-      <p>Optimize post timings to publish content at the perfect time.</p>
-    </div>
-
-    <div class="card followers yellow">
-      <h2>Grow followers</h2>
-      <p>>56% faster audience growth</p>
-    </div>
-
-    <div class="card write">
-      <h2>Create content quicker</h2>
-      <p>Write your posts using AI assistance.</p>
-    </div>
-
-    <div class="card ai">
-      <h2>Manage multiple platforms</h2>
-      <p>Keep consistent across all accounts easily.</p>
-    </div>
-  </div>
-
-</body>
+  </body>
 </html>
